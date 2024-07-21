@@ -54,8 +54,12 @@ func (a *Array[T]) Size() int {
 	return a.size
 }
 
+func (a *Array[T]) IsEmpty() bool {
+	return a.size == 0
+}
+
 func (a *Array[T]) Pop() (T, error) {
-	if a.size == 0 {
+	if a.IsEmpty() {
 		var zero T
 		return zero, fmt.Errorf("cannot pop from an empty array")
 	}

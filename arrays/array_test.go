@@ -206,6 +206,41 @@ func TestArray_Size(t *testing.T) {
 	}
 }
 
+func TestArray_IsEmpty(t *testing.T) {
+	type testCase[T any] struct {
+		name string
+		a    Array[T]
+		want bool
+	}
+	tests := []testCase[int]{
+		{
+			name: "Array is not empty",
+			a: Array[int]{
+				data:     []int{1, 2, 3},
+				size:     3,
+				capacity: 10,
+			},
+			want: false,
+		},
+		{
+			name: "Array is empty",
+			a: Array[int]{
+				data:     []int{},
+				size:     0,
+				capacity: 10,
+			},
+			want: true,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.a.IsEmpty(); got != tt.want {
+				t.Errorf("IsEmpty() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
 func TestArray_resize(t *testing.T) {
 	type testCase[T any] struct {
 		name     string
