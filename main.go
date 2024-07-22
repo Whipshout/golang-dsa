@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"golang-dsa/arrays"
 	"golang-dsa/queues"
+	"golang-dsa/stacks"
 )
 
 func main() {
@@ -32,7 +33,7 @@ func main() {
 	fmt.Printf("intArray Pop: %v\n", lastItem)
 	fmt.Println("--------------------- Array ---------------------")
 	// --------------------- Array ---------------------
-
+	fmt.Println()
 	// --------------------- Queue ---------------------
 	fmt.Println("--------------------- Queue ---------------------")
 	stringQueue := queues.New[string]()
@@ -54,4 +55,27 @@ func main() {
 	fmt.Printf("peakItem: %v\n", err)
 	fmt.Println("--------------------- Queue ---------------------")
 	// --------------------- Queue ---------------------
+	fmt.Println()
+	// --------------------- Stack ---------------------
+	fmt.Println("--------------------- Stack ---------------------")
+	booleanStack := stacks.New[bool]()
+	fmt.Printf("booleanStack is empty: %v\n", booleanStack.IsEmpty())
+	_ = booleanStack.Push(true)
+	_ = booleanStack.Push(false)
+	fmt.Printf("booleanStack length: %v\n", booleanStack.Size())
+
+	peakStack, _ := booleanStack.Peek()
+	fmt.Printf("peakStack: %v\n", peakStack)
+
+	booleanItem, _ := booleanStack.Pop()
+	fmt.Printf("Last stack item: %v\n", booleanItem)
+
+	booleanItem, _ = booleanStack.Pop()
+	fmt.Printf("Last stack item: %v\n", booleanItem)
+
+	_, err = booleanStack.Peek()
+	fmt.Printf("peakStack: %v\n", err)
+	fmt.Println("--------------------- Stack ---------------------")
+	// --------------------- Stack ---------------------
+	fmt.Println()
 }
