@@ -1,6 +1,8 @@
 package arrays
 
-import "fmt"
+import (
+	"errors"
+)
 
 type Array[T any] struct {
 	data     []T
@@ -34,7 +36,7 @@ func (a *Array[T]) Append(element T) {
 func (a *Array[T]) Get(index int) (T, error) {
 	if index < 0 || index >= a.size {
 		var zero T
-		return zero, fmt.Errorf("index out of range")
+		return zero, errors.New("index out of range")
 	}
 
 	return a.data[index], nil
@@ -42,7 +44,7 @@ func (a *Array[T]) Get(index int) (T, error) {
 
 func (a *Array[T]) Set(index int, element T) error {
 	if index < 0 || index >= a.size {
-		return fmt.Errorf("index out of range")
+		return errors.New("index out of range")
 	}
 
 	a.data[index] = element
@@ -61,7 +63,7 @@ func (a *Array[T]) IsEmpty() bool {
 func (a *Array[T]) Pop() (T, error) {
 	if a.IsEmpty() {
 		var zero T
-		return zero, fmt.Errorf("cannot pop from an empty array")
+		return zero, errors.New("cannot pop from an empty array")
 	}
 
 	a.size--

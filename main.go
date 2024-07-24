@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"golang-dsa/arrays"
+	"golang-dsa/linked_lists"
 	"golang-dsa/queues"
 	"golang-dsa/stacks"
 )
@@ -77,5 +78,31 @@ func main() {
 	fmt.Printf("peakStack: %v\n", err)
 	fmt.Println("--------------------- Stack ---------------------")
 	// --------------------- Stack ---------------------
+	fmt.Println()
+	// --------------------- Linked List ---------------------
+	fmt.Println("--------------------- Linked List ---------------------")
+	intLL := linked_lists.New[int]()
+	fmt.Printf("intLL is empty: %v\n", intLL.IsEmpty())
+	intLL.PushFront(1)
+	intLL.PushFront(2)
+	intLL.PushFront(3)
+	fmt.Printf("intLL length: %v\n", intLL.Size())
+
+	frontValue, _ := intLL.Front()
+	fmt.Printf("frontValue: %v\n", frontValue)
+
+	backValue, _ := intLL.Back()
+	fmt.Printf("backValue: %v\n", backValue)
+
+	frontValue, _ = intLL.PopFront()
+	fmt.Printf("frontValue: %v\n", frontValue)
+
+	backValue, _ = intLL.PopBack()
+	fmt.Printf("backValue: %v\n", backValue)
+
+	frontValue, _ = intLL.PopFront()
+	fmt.Printf("frontValue: %v\n", frontValue)
+	fmt.Println("--------------------- Linked List ---------------------")
+	// --------------------- Linked List ---------------------
 	fmt.Println()
 }
