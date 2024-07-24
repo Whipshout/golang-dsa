@@ -1,1 +1,18 @@
 # Data structures and algorithms in Go for learning purposes
+
+----------------------------------------------------------
+
+## Data Structures
+
+ - [X] Array
+ - [X] Queue
+ - [X] Stack
+ - [X] Linked List
+ - [ ] Heap
+ - [ ] Tree
+ - [ ] Binary Tree
+ - [ ] Hash Table
+ - [ ] Graphs
+ - [ ] Set
+
+-----------------------------------------------------------------
