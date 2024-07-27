@@ -8,7 +8,7 @@
  - [X] Queue
  - [X] Stack
  - [X] Linked List
- - [ ] Heap
+ - [X] Heap
  - [ ] Tree
  - [ ] Binary Tree
  - [ ] Hash Table

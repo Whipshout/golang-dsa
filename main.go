@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"golang-dsa/arrays"
+	"golang-dsa/heaps"
 	"golang-dsa/linked_lists"
 	"golang-dsa/queues"
 	"golang-dsa/stacks"
@@ -104,5 +105,28 @@ func main() {
 	fmt.Printf("frontValue: %v\n", frontValue)
 	fmt.Println("--------------------- Linked List ---------------------")
 	// --------------------- Linked List ---------------------
+	fmt.Println()
+	// --------------------- Heap ---------------------
+	fmt.Println("--------------------- Heap ---------------------")
+	boolHeap := heaps.New[int]()
+	fmt.Printf("boolHeap length: %v\n", boolHeap.Size())
+	boolHeap.Push(1)
+	boolHeap.Push(3)
+	boolHeap.Push(2)
+	fmt.Printf("boolHeap length: %v\n", boolHeap.Size())
+
+	popValue, _ := boolHeap.Pop()
+	fmt.Printf("popValue: %v\n", popValue)
+
+	popValue, _ = boolHeap.Pop()
+	fmt.Printf("popValue: %v\n", popValue)
+
+	popValue, _ = boolHeap.Pop()
+	fmt.Printf("popValue: %v\n", popValue)
+
+	_, err = boolHeap.Pop()
+	fmt.Printf("popValue: %v\n", err)
+	fmt.Println("--------------------- Heap ---------------------")
+	// --------------------- Heap ---------------------
 	fmt.Println()
 }
