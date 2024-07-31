@@ -9,6 +9,7 @@ import (
 	"golang-dsa/queues"
 	"golang-dsa/sets"
 	"golang-dsa/stacks"
+	"golang-dsa/trees"
 )
 
 func main() {
@@ -185,5 +186,27 @@ func main() {
 
 	fmt.Println("--------------------- Hash Table ---------------------")
 	// --------------------- Hash Table ---------------------
+	fmt.Println()
+	// --------------------- Tree ---------------------
+	fmt.Println("--------------------- Tree ---------------------")
+	tree := trees.New[string, string]("root_key", "root_value")
+	b := tree.Root.AddChild("1", "one")
+	c := tree.Root.AddChild("2", "two")
+	b.AddChild("3", "three")
+	b.AddChild("4", "four")
+	c.AddChild("5", "five")
+	c.AddChild("6", "six")
+	tree.Root.Display(0)
+
+	foundString := tree.Root.Find("1")
+	fmt.Printf("foundString: %s\n", foundString)
+
+	deleteString := tree.Root.RemoveChild("1")
+	fmt.Printf("deleteString is: %v\n", deleteString)
+
+	foundString = tree.Root.Find("1")
+	fmt.Printf("foundString: %s\n", foundString)
+	fmt.Println("--------------------- Tree ---------------------")
+	// --------------------- Tree ---------------------
 	fmt.Println()
 }

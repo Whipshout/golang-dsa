@@ -9,7 +9,7 @@
  - [X] Stack
  - [X] Linked List
  - [X] Heap
- - [ ] Tree
+ - [X] Tree
  - [ ] Binary Tree
  - [X] Hash Table
  - [ ] Graphs
