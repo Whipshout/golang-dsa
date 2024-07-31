@@ -11,7 +11,7 @@
  - [X] Heap
  - [ ] Tree
  - [ ] Binary Tree
- - [ ] Hash Table
+ - [X] Hash Table
  - [ ] Graphs
  - [X] Set
 

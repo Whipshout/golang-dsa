@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"golang-dsa/arrays"
+	"golang-dsa/hash_tables"
 	"golang-dsa/heaps"
 	"golang-dsa/linked_lists"
 	"golang-dsa/queues"
@@ -165,5 +166,24 @@ func main() {
 	fmt.Printf("stringSet length: %v\n", stringSet.Size())
 	fmt.Println("--------------------- Set ---------------------")
 	// --------------------- Set ---------------------
+	fmt.Println()
+	// --------------------- Hash Table ---------------------
+	fmt.Println("--------------------- Hash Table ---------------------")
+	htInt := hash_tables.New[string, int]()
+	htInt.Insert("one", 1)
+	htInt.Insert("two", 2)
+	fmt.Printf("htInt length: %v\n", htInt.Size())
+
+	intValue, _ := htInt.Get("two")
+	fmt.Printf("Key two value: %v\n", intValue)
+
+	htInt.Display()
+
+	htInt.Delete("two")
+	_, found := htInt.Get("two")
+	fmt.Printf("Key two found: %v\n", found)
+
+	fmt.Println("--------------------- Hash Table ---------------------")
+	// --------------------- Hash Table ---------------------
 	fmt.Println()
 }
