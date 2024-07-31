@@ -6,6 +6,7 @@ import (
 	"golang-dsa/heaps"
 	"golang-dsa/linked_lists"
 	"golang-dsa/queues"
+	"golang-dsa/sets"
 	"golang-dsa/stacks"
 )
 
@@ -128,5 +129,41 @@ func main() {
 	fmt.Printf("popValue: %v\n", err)
 	fmt.Println("--------------------- Heap ---------------------")
 	// --------------------- Heap ---------------------
+	fmt.Println()
+	// --------------------- Set ---------------------
+	fmt.Println("--------------------- Set ---------------------")
+	stringSet := sets.New[string]()
+	fmt.Printf("stringSet length: %v\n", stringSet.Size())
+	stringSet.Add("a")
+	stringSet.Add("b")
+	stringSet.Add("c")
+	fmt.Printf("stringSet length: %v\n", stringSet.Size())
+
+	stringSet2 := sets.New[string]()
+	stringSet2.Add("b")
+	stringSet2.Add("d")
+
+	contains := stringSet2.Contains("a")
+	fmt.Printf("contains: %v\n", contains)
+
+	unionSet := stringSet.Union(*stringSet2)
+	fmt.Printf("unionSet length: %v\n", unionSet.Size())
+
+	intersectionSet := stringSet.Intersection(*stringSet2)
+	fmt.Printf("intersectionSet length: %v\n", intersectionSet.Size())
+
+	differenceSet := stringSet.Difference(*stringSet2)
+	fmt.Printf("differenceSet length: %v\n", differenceSet)
+
+	sliceSet := stringSet.ToSlice()
+	fmt.Printf("sliceSet length: %v\n", len(sliceSet))
+
+	stringSet.Remove("a")
+	fmt.Printf("stringSet length: %v\n", stringSet.Size())
+
+	stringSet.Clear()
+	fmt.Printf("stringSet length: %v\n", stringSet.Size())
+	fmt.Println("--------------------- Set ---------------------")
+	// --------------------- Set ---------------------
 	fmt.Println()
 }
