@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"golang-dsa/arrays"
+	"golang-dsa/binary_trees"
 	"golang-dsa/hash_tables"
 	"golang-dsa/heaps"
 	"golang-dsa/linked_lists"
@@ -209,4 +210,27 @@ func main() {
 	fmt.Println("--------------------- Tree ---------------------")
 	// --------------------- Tree ---------------------
 	fmt.Println()
+	// --------------------- Binary Tree ---------------------
+	fmt.Println("--------------------- Binary Tree ---------------------")
+	bTree := binary_trees.New[int]()
+	bTree.Insert(1)
+	bTree.Insert(3)
+	bTree.Insert(5)
+	bTree.Insert(2)
+	bTree.Insert(4)
+
+	nodeFound := bTree.Search(3)
+	fmt.Printf("nodeFound: %v\n", nodeFound)
+
+	nodeFound = bTree.Search(8)
+	fmt.Printf("nodeFound: %v\n", nodeFound)
+
+	bTree.Delete(4)
+	nodeFound = bTree.Search(4)
+	fmt.Printf("nodeFound: %v\n", nodeFound)
+
+	bTreeOrdered := bTree.InorderTraversal()
+	fmt.Printf("bTreeOrdered: %v\n", bTreeOrdered)
+	fmt.Println("--------------------- Binary Tree ---------------------")
+	// --------------------- Binary Tree ---------------------
 }

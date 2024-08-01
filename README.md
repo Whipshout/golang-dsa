@@ -10,9 +10,9 @@
  - [X] Linked List
  - [X] Heap
  - [X] Tree
- - [ ] Binary Tree
+ - [X] Binary Tree
  - [X] Hash Table
- - [ ] Graphs
+ - [ ] Graph // _Probably not going to do it :')_
  - [X] Set
 
 -----------------------------------------------------------------
